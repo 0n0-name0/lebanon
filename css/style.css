@@ -1,0 +1,378 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(26, 19, 19);
+}
+.title-head
+{
+    position: absolute;
+    color: whitesmoke;
+    top: 5%;
+    left: 33%;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 4px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    text-shadow: 35px 15px 30px green, -20px -20px 30px red, 1px 1px 25px yellow;
+    animation: title-leb 3s 1;
+}
+@keyframes title-leb
+{
+    0%{
+        transform: translateY(-200px) rotate(250deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.cont-heart
+{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(235, 0, 0);
+    float: right;
+    position: relative;
+    top: 100px;
+    right: 120px;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px rgb(235, 0, 0);
+    animation: heart 0.6s linear infinite 2s;
+    
+}
+@keyframes heart
+{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+        visibility: visible;
+        transition: 4s;
+    }
+    70%{
+        transform: rotate(-45deg) scale(1);
+        visibility: hidden;
+        transition: 4s;
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+        visibility: hidden;
+        transition: 4s;
+    }
+}
+.cont-heart::before
+{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(235, 0, 0);
+    top: -50%;
+    border-radius: 50px;
+    box-shadow: -10px -10px 90px rgb(235, 0, 0);
+
+}
+.cont-heart::after
+{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(235, 0, 0);
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 90px rgb(235, 0, 0);
+}
+/*heart 2*/
+.cont-heart2{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(235, 0, 0);
+    float: left;
+    position: relative;
+    top: 100px;
+    left: 120px;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px rgb(235, 0, 0);
+    animation: heart 0.7s linear infinite 2s;
+    
+}
+.cont-heart2::before
+{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(235, 0, 0);
+    top: -50%;
+    border-radius: 50px;
+    box-shadow: -10px -10px 90px rgb(235, 0, 0);
+}
+.cont-heart2::after
+{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(235, 0, 0);
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 90px rgb(235, 0, 0);
+}
+/* .flexing
+{
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    transition-delay: 3s;
+    animation-name: behindcolor;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+@keyframes behindcolor
+{
+    0%{
+        box-shadow: 0px 0px 0px transparent;
+    }
+    100%{
+        box-shadow: 30px 30px 15px green;
+    }
+} */
+.container
+{
+    width: 80%;
+    height: 50vh;
+    z-index: 0;
+    position: relative;
+    top: 25%;
+    left: 27%;
+}
+.first,
+.second,
+.third
+{
+    width: 50%;
+    height: calc(40vh/3);
+}
+
+.container .first
+{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    animation-name: first;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+.container .second
+{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: contsec;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+.container .third
+{
+    background-color: red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation-name: third;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+.container .second .logo
+{
+    margin-bottom: -70px;
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    position: relative;
+    animation-name: logo;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+/* .container .second .logo>div:nth-child(1)
+{
+    width: 15px;
+    height: 65px;
+    position: absolute;
+    background-color: green;
+    z-index: 1000;
+    transform: translate(8px,-62px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.container .second .logo>div:nth-child(2)
+{
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    background-color: green;
+    transform: translate(-14px,-32px) rotate(60deg);
+    border-radius:  0px 0px 50% 50%;
+}
+.container .second .logo>div:nth-child(3)
+{
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    background-color: green;
+    transform: translate(32px,-33px) rotate(-60deg);
+    border-radius:  0px 0px 50% 50%;
+}
+.container .second .logo>div:nth-child(4)
+{
+    width: 10px;
+    height: 45px;
+    position: absolute;
+    background-color: green;
+    transform: translate(-14px,-50px) rotate(60deg);
+    border-radius:  0px 0px 50% 50%;
+} */
+.container .second .logo>div:nth-child(5)
+{
+    width: 10px;
+    height: 45px;
+    position: absolute;
+    background-color: green;
+    transform: translate(32px,-50px) rotate(-60deg);
+    border-radius:  0px 0px 50% 50%;
+}
+.container .second .logo>div:nth-child(6)
+{
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    background-color: green;
+    transform: translate(29.5px,-67px) rotate(-60deg);
+    border-radius:  0px 0px 50% 50%;
+    z-index: 9999;
+}
+.container .second .logo>div:nth-child(7)
+{
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    background-color: green;
+    transform: translate(-9.5px,-66px) rotate(60deg);
+    border-radius:  0px 0px 50% 50%;
+    z-index: 9999;
+}
+@keyframes first
+{
+    0%{
+        transform: translateY(-1000px);
+        opacity: 0.3;
+    }
+    100%
+    {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes third
+{
+    0%{
+        transform: translateY(1000px);
+        opacity: 0.3;
+    }
+    100%
+    {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes logo
+{
+    0%{
+        
+        opacity: 0.1;
+    }
+    25%{
+        opacity: 0.3;
+    }
+    70%{
+        opacity: 0.5;
+    }
+    80%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes contsec
+{
+    0%{
+        opacity: 0.3 ;
+    }
+    25%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+.container .second .logo>div:nth-child(1)
+{
+    width: 15px;
+    height: 65px;
+    position: absolute;
+    background-color: green;
+    z-index: 1000;
+    transform: translate(8px,-62px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.container .second .logo>div:nth-child(2)
+{
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    background-color: green;
+    transform: translate(-14px,-32px) rotate(60deg);
+    border-radius:  0px 0px 50% 50%;
+}
+.container .second .logo>div:nth-child(3)
+{
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    background-color: green;
+    transform: translate(32px,-33px) rotate(-60deg);
+    border-radius:  0px 0px 50% 50%;
+}
+.container .second .logo>div:nth-child(4)
+{
+    width: 10px;
+    height: 45px;
+    position: absolute;
+    background-color: green;
+    transform: translate(-14px,-50px) rotate(60deg);
+    border-radius:  0px 0px 50% 50%;
+}
